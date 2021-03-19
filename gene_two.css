@@ -1,0 +1,87 @@
+
+p {color:rgb(0, 15, 27)}
+p {color: rgb(240, 240, 240);} 
+h3 {color: rgb(240, 240, 240);} 
+a {color: rgb(210, 206, 255);} 
+a:visited {color:rgb(171, 168, 197);}
+
+
+
+body {
+    background-color: rgb(43, 43, 43);
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;}
+    
+        .header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 99%;
+        height: 11%;
+        text-align: center;
+        justify-content: flex-start;
+
+        ;}
+    
+            .nav_buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 20%;
+            height: 30%;
+            text-align: center;}
+    
+                .about_button {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+                background-color: rgb(80, 80, 80) ;}
+    
+                .works_button {
+                display: flex;
+                width: 50%;
+                height: 100%;
+                align-self: center;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+                background-color: rgb(80, 80, 80) ;}
+
+
+.gen1_and_controls{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    height: 91%;
+    justify-content: space-between;
+}
+
+
+    .controls{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    width: 300px;
+    width:auto;
+    margin: 10px;
+    line-height: 25px;
+    font-size: 19px;
+    padding: 5px;
+    border: 4px solid #737373;
+    }
+
+    .gen1{
+        width: 80%;
+    }
+    .slider{
+      text-align: center;
+    }
+#note{
+  color: red;
+}
