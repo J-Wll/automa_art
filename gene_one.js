@@ -10,10 +10,10 @@
     let ranfactor = 1;
     let runtime = 300 // 300 actual value higher for testing
     let opacity = 0.6
-    // let runtime = document.getElementById("sld_runtime").value;
-    // let opacity = document.getElementById("sld_transparency").value;
-    // let ranfactor = document.getElementById("sld_randomization").value;
-
+    // let runtime = document.querySelector("sld_runtime").value;
+    // let opacity = document.querySelector("sld_transparency").value;
+    // let ranfactor = document.querySelector("sld_randomization").value;
+    
     // a_runtime.oninput = function() {
     //   output.innerHTML = this.value;
     // }
