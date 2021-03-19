@@ -25,7 +25,7 @@
     
     
     var canvas = document.querySelector('.my_canvas');
-    var width = canvas.width = window.innerWidth - 500;
+    var width = canvas.width = window.innerWidth - 300;
     var height = canvas.height = window.innerHeight-200;
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = 'rgb(40,40,40)';
