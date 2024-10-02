@@ -32,7 +32,7 @@
 
         <div class = "gen1">
         <canvas class="my_canvas"width="1000"height="1000"> 
-            <p>Canvas unable to be displyed</p>
+            <p>Canvas unable to be displayed</p>
         </canvas>
         </div>
         
@@ -42,16 +42,24 @@
 
              <div class = "slider_container">
                  <div class = "controls slider">
-                    <input type="range" min = "0.1" max = "50" value = "1" id="sld_randomization"></input> 
-                    <p>Randomization factor</p>
+                    <input type="range" min = "0.1" max = "50" value = "1" id="sld_randomization" step="0.1" oninput="this.nextElementSibling.value = this.value"></input> 
+                    <output>1</output>
+                    <p class="low-margin">Randomization factor</p>
                 </div>
                 <div class = "controls slider">
-                    <input type="range" min = "100" max = "2000" value = "300" id="sld_runtime"> </input> 
-                    <p>Runtime</p>
+                    <input type="range" min = "100" max = "2000" value = "300" id="sld_runtime"  oninput="this.nextElementSibling.value = this.value"> </input> 
+                    <output>300</output>
+                    <p class="low-margin">Runtime</p>
                 </div>
                 <div class = "controls slider">
-                    <input type="range" min = "0.1" max = "1" value = "0.7" id="sld_opacity" step="0.1"> </input> 
-                    <p>Opacity</p> 
+                    <input type="range" min = "0.1" max = "1" value = "0.7" id="sld_opacity" step="0.1" oninput="this.nextElementSibling.value = this.value"> </input> 
+                    <output>0.7</output>
+                    <p class="low-margin">Opacity</p> 
+                </div>
+                <div class = "controls slider">
+                    <input type="range" min = "0.1" max = "10" value = "1" id="sld_triheight" step="0.1" oninput="this.nextElementSibling.value = this.value"></input> 
+                    <output>1</output>
+                    <p class="low-margin">Triangle Height</p>
                 </div>
             </div>
         </div>
