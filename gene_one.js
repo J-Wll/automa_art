@@ -18,9 +18,10 @@ let colour1 = 'rgba(200, 100, 55';
 let colour2 = 'rgba(0, 100, 255';
 let firstColour = true;
 
+const gen1 = document.querySelector('.gen1');
 const canvas = document.querySelector('.my_canvas');
-const width = canvas.width = window.innerWidth - 500;
-const height = canvas.height = window.innerHeight - 100;
+let width = canvas.width = gen1.offsetWidth;
+let height = canvas.height = gen1.offsetHeight;
 const ctx = canvas.getContext('2d');
 
 // html only uses hex, rgb allows for easy opacity control from the slider
@@ -106,9 +107,9 @@ function canvasReset() {
   moveOffset += Math.floor(Math.random() * (1.5 * ranfactor)) + 1;
   ran2 += Math.floor(Math.random() * (3 * ranfactor)) + 1;
   ran3 += Math.floor(Math.random() * (50 * ranfactor)) + 1;
-  ctx.canvas.width = window.innerWidth;
-  ctx.canvas.height = window.innerHeight;
-  ctx.translate(width / 1.5, height / 2);
+  width = canvas.width = ctx.canvas.width = gen1.offsetWidth;
+  height = canvas.height = ctx.canvas.height = gen1.offsetHeight;
+  ctx.translate(width / 2, height / 2);
 
   gen()
 }
