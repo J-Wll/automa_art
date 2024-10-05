@@ -68,7 +68,7 @@ body {
 }
 
 
-.gen1_and_controls {
+.gen_and_controls {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -95,7 +95,7 @@ body {
     align-self: center;
 }
 
-.gen1 {
+.gen {
     width: 100%;
 }
 
