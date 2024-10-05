@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,66 +7,83 @@
     <link rel="stylesheet" href="gene_one.css">
     <title>AutomaArt</title>
     <style>
-        body {margin: 0;overflow: hidden;}
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
     </style>
 </head>
 
-<body> 
+<body>
 
-    <div class = "header"> <!--  divison for bar at the top-->
+    <div class="header"> <!--  divison for bar at the top-->
         <h3>| AutomaArt |</h3>
 
-        <div class = "nav_buttons">
+        <div class="nav_buttons">
 
-            <div class = "about_button"> <!--  divison for the home button top-->
+            <div class="about_button"> <!--  divison for the home button top-->
                 <p><a href="about.html">| About this project |</a></p>
             </div>
-            <div class = "works_button"> <!--  divison for the how it works button-->
+            <div class="works_button"> <!--  divison for the how it works button-->
                 <p><a href="works.html">| How it works |</a></p>
             </div>
         </div>
     </div>
 
-    <div class = "gen1_and_controls">
+    <div class="gen1_and_controls">
 
-        <div class = "gen1">
-        <canvas class="my_canvas"width="1000"height="1000"> 
-            <p>Canvas unable to be displayed</p>
-        </canvas>
+        <div class="gen1">
+            <canvas class="my_canvas" width="1000" height="1000">
+                <p>Canvas unable to be displayed</p>
+            </canvas>
         </div>
-        
-        <div class = "controls">
-             <a  class = "controls">Generator 1 (Current)</a> 
-             <a href="gene_two.html" class = "controls">Generator 2</a> 
 
-             <div class = "slider_container">
-                 <div class = "controls slider">
-                    <input type="range" min = "0.1" max = "50" value = "1" id="sld_randomization" step="0.1" oninput="this.nextElementSibling.value = this.value"></input> 
-                    <output>1</output>
-                    <p class="low-margin">Randomization factor</p>
-                </div>
-                <div class = "controls slider">
-                    <input type="range" min = "100" max = "2000" value = "300" id="sld_runtime"  oninput="this.nextElementSibling.value = this.value"> </input> 
-                    <output>300</output>
-                    <p class="low-margin">Runtime</p>
-                </div>
-                <div class = "controls slider">
-                    <input type="range" min = "0.1" max = "1" value = "0.7" id="sld_opacity" step="0.1" oninput="this.nextElementSibling.value = this.value"> </input> 
-                    <output>0.7</output>
-                    <p class="low-margin">Opacity</p> 
-                </div>
-                <div class = "controls slider">
-                    <input type="range" min = "0.1" max = "10" value = "1" id="sld_triheight" step="0.1" oninput="this.nextElementSibling.value = this.value"></input> 
-                    <output>1</output>
-                    <p class="low-margin">Triangle Height</p>
-                </div>
+        <!-- <div class = "controls"> -->
+        <div class="slider_container">
+            <div class="controls ">
+                <p class="low-margin">Randomization factor</p>
+                <input type="range" min="0.1" max="50" value="1" id="sld_randomization" step="0.1"
+                    oninput="this.nextElementSibling.value = this.value"></input>
+                <output>1</output>
+            </div>
+            <div class="controls ">
+                <p class="low-margin">Runtime</p>
+                <input type="range" min="100" max="2000" value="300" id="sld_runtime"
+                    oninput="this.nextElementSibling.value = this.value"> </input>
+                <output>300</output>
+            </div>
+            <div class="controls ">
+                <p class="low-margin">Opacity</p>
+                <input type="range" min="0.1" max="1" value="0.7" id="sld_opacity" step="0.1"
+                    oninput="this.nextElementSibling.value = this.value"> </input>
+                <output>0.7</output>
+            </div>
+            <div class="controls ">
+                <p class="low-margin">Triangle Height</p>
+                <input type="range" min="0.1" max="10" value="1" id="sld_triheight" step="0.1"
+                    oninput="this.nextElementSibling.value = this.value"></input>
+                <output>1</output>
+            </div>
+            <div class="controls ">
+                <p class="low-margin">Moving?</p>
+                <input type="checkbox" id="chk_moving"></input>
+            </div>
+            <div class="controls ">
+                <p class="low-margin">Colour 1</p>
+                <input type="color" id="col_1"></input>
+            </div>
+            <div class="controls =">
+                <p class="low-margin">Colour 2</p>
+                <input type="color" id="col_2"></input>
             </div>
         </div>
+        <!-- </div> -->
 
     </div>
 
-<a href=""></a>
-<script src="gene_one.js"></script>
-    
+    <a href=""></a>
+    <script src="gene_one.js"></script>
+
 </body>
+
 </html>

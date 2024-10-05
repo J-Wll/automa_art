@@ -10,16 +10,29 @@ let ran3 = 0;
 let ranfactor = 1;
 let runtime = 300 // 300 actual value higher for testing
 let opacity = 0.6
-let ofst = 0.5
 let decrease = true;
 let triHeightFactor = 1;
-// TODO: Make moving a checkbox
-let moving = true;
+let moving = false;
+// classic colours
+let colour1 = 'rgba(200, 100, 55';
+let colour2 = 'rgba(0, 100, 255';
+let firstColour = true;
 
 const canvas = document.querySelector('.my_canvas');
 const width = canvas.width = window.innerWidth - 500;
 const height = canvas.height = window.innerHeight - 100;
 const ctx = canvas.getContext('2d');
+
+// html only uses hex, rgb allows for easy opacity control from the slider
+function hexToRGB(hex) {
+  // https://stackoverflow.com/questions/36697749/html-get-color-in-rgb
+  return "rgba(" + hex.match(/[A-Za-z0-9]{2}/g).map(function (v) { return parseInt(v, 16) }).join(",");
+}
+
+function RGBToHex(rgb) {
+  // chatgippty
+  return "#" + rgb.match(/\d+/g).map(function (v) { return ("0" + parseInt(v).toString(16)).slice(-2); }).join("");
+}
 
 runtimeSlider = document.querySelector("#sld_runtime");
 runtimeSlider.value = runtime;
@@ -48,6 +61,29 @@ triSlider.onchange = function () {
   triHeightFactor = this.value;
 }
 
+movingBox = document.querySelector("#chk_moving");
+movingBox.checked = moving;
+movingBox.onclick = function () {
+  if (movingBox.checked) {
+    console.log("checked")
+  }
+  moving = this.checked;
+}
+
+colourPick1 = document.querySelector("#col_1");
+colourPick1.value = RGBToHex(colour1);
+colourPick1.onchange = function () {
+  colour1 = hexToRGB(this.value)
+  console.log(colour1)
+}
+
+colourPick2 = document.querySelector("#col_2");
+colourPick2.value = RGBToHex(colour2);
+colourPick2.onchange = function () {
+  colour2 = hexToRGB(this.value)
+  console.log(colour2)
+}
+
 function degToRad(degrees) {
   return degrees * Math.PI / 160;
 }
@@ -60,35 +96,46 @@ function canvasReset() {
   length = 250;
   moveOffset = 20;
   increment = 0;
-  ofst = 0.5;
   ran2 = 0;
   ran3 = 0;
   decrease = true;
 
-  ctx.translate(width / 2, height / 2);
   ctx.fillStyle = 'rgb(40,40,40)';
   ctx.fillRect(0, 0, width, height);
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  increment += Math.floor(Math.random() * (1.5 * ranfactor)) + 1;
+  moveOffset += Math.floor(Math.random() * (1.5 * ranfactor)) + 1;
   ran2 += Math.floor(Math.random() * (3 * ranfactor)) + 1;
   ran3 += Math.floor(Math.random() * (50 * ranfactor)) + 1;
+  ctx.canvas.width = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
+  ctx.translate(width / 1.5, height / 2);
 
   gen()
 }
 
 function gen() {
   run_count += 1
-
   const triHeight = (length / 2 * Math.tan(degToRad(60)) * triHeightFactor);
-  ofst = 0.5
+
   // this toggle replaces gen2
   if (moving) {
-    ofst += increment / 2
-    moveOffset += ofst;
+    moveOffset += Math.floor(Math.random() * 5) * (ranfactor) + 1;
+    // console.log(moveOffset)
   }
-  ctx.fillStyle = `rgba(${c1}, 100, ${c2}, ${opacity})`
+
+  if (firstColour) {
+    ctx.fillStyle = `${colour1}, ${opacity})`
+    firstColour = false;
+  } else {
+    ctx.fillStyle = `${colour2}, ${opacity})`
+    firstColour = true;
+  }
+  // ctx.fillStyle = `rgba(${c1}, 100, ${c2}, ${opacity})`
+
+
   ctx.beginPath();
-  ctx.moveTo(moveOffset, moveOffset);
+  // ctx.moveTo(moveOffset, moveOffset);
+
   ctx.lineTo(moveOffset + length, moveOffset);
   ctx.lineTo(moveOffset + (length / 2), moveOffset + triHeight);
   ctx.lineTo(moveOffset, moveOffset);
@@ -126,7 +173,7 @@ function gen() {
   }
   else {
     window.requestAnimationFrame(gen)
-    console.log(triHeight, c1, c2, opacity, moveOffset, length, ofst, "AAA", increment, ranfactor, ran2, ran3, run_count)
+    // console.log(triHeight, c1, c2, opacity, moveOffset, length, "AAA", increment, ranfactor, ran2, ran3, run_count)
   }
 
 }
