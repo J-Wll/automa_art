@@ -20,8 +20,9 @@ let firstColour = true;
 
 const genDiv = document.querySelector('.gen');
 const canvas = document.querySelector('.my_canvas');
-let width = canvas.width = genDiv.offsetWidth;
-let height = canvas.height = genDiv.offsetHeight;
+// client and offset 
+let width = canvas.width = genDiv.clientWidth;
+let height = canvas.height = genDiv.clientHeight;
 const ctx = canvas.getContext('2d');
 
 // html only uses hex, rgb allows for easy opacity control from the slider
